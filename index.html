@@ -1,92 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eindreistiger - Video Editor Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Eindreistiger</div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#work" class="nav-link">Video Work</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modern portfolio webpage with a unique purple and black gradient design."
+    />
+    <title>Eindreistiger Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Eindreistiger</h1>
-            <p class="hero-subtitle">Professional Video Editor</p>
-            <a href="#about" class="cta-button">Explore</a>
-        </div>
-    </section>
+    <header class="site-header">
+      <a class="brand" href="#home">Eindreistiger</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#clients">Clients</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="about-text">
-                I'm a passionate video editor specializing in creating compelling visual stories. 
-                With expertise in color grading, motion graphics, and post-production, I transform raw footage 
-                into professional, engaging content that captivates audiences.
-            </p>
+    <main id="home">
+      <section class="hero panel">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Video Editor creating all kinds of videos for every platform.</h1>
+        <p class="lead">
+          I am Eindreistiger, and I edit all kinds of videos with clean pacing, strong visual flow,
+          and a style adapted to your project.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="#contact">Let&apos;s Talk</a>
         </div>
-    </section>
+      </section>
 
-    <!-- Video Work Section -->
-    <section id="work" class="projects">
-        <div class="container">
-            <h2 class="section-title">Video Work</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <h3 class="project-title">Cinematic Project</h3>
-                    <p class="project-description">Professional cinematic edit with color grading and motion graphics.</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <h3 class="project-title">Commercial Campaign</h3>
-                    <p class="project-description">Dynamic commercial with fast-paced editing and transitions.</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <h3 class="project-title">Music Video</h3>
-                    <p class="project-description">Creative music video with synchronized cuts and effects.</p>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
+      <section id="about" class="panel split">
+        <div>
+          <h2>About Me</h2>
+          <p>
+            I work with all kinds of video formats and always aim to deliver the strongest edit
+            possible. I am open to any format and will always try my best for every project.
+          </p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">Ready to bring your vision to life? Contact me for your next project!</p>
-            <a href="mailto:your.email@example.com" class="cta-button">Send Me an Email</a>
+        <div class="stat-grid">
+          <article>
+            <h3>Cinematic</h3>
+            <p>Visual Storytelling</p>
+          </article>
+          <article>
+            <h3>Any Format</h3>
+            <p>Flexible Editing</p>
+          </article>
+          <article>
+            <h3>Detail</h3>
+            <p>Color and Rhythm</p>
+          </article>
+          <article>
+            <h3>Commitment</h3>
+            <p>Always My Best</p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Eindreistiger. All rights reserved.</p>
+      <section id="projects" class="panel">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+          <p>Examples of different editing styles, from short-form social clips to longer videos.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>TikTok Content</h3>
+            <p>Short-form edits built for retention, pace, and platform-native flow.</p>
+            <span>Short Form • Hooks • Fast Pacing</span>
+            <a class="project-link" href="https://www.tiktok.com/@eindreistiger" target="_blank" rel="noreferrer">Watch on TikTok</a>
+          </article>
+          <article class="project-card">
+            <h3>YouTube Videos</h3>
+            <p>Longer edits with clear storytelling, rhythm, and polished transitions.</p>
+            <span>Long Form • Story • Sound</span>
+            <a class="project-link" href="https://www.youtube.com/@eindreistiger" target="_blank" rel="noreferrer">Watch on YouTube</a>
+          </article>
+          <article class="project-card">
+            <h3>Custom Client Edits</h3>
+            <p>Flexible edits for promos, gaming, highlights, and creator content.</p>
+            <span>Any Format • Flexible Style • Delivery Ready</span>
+            <p class="project-handle">Discord: eindreistiger</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="clients" class="panel">
+        <div class="section-head">
+          <h2>People I Edit For</h2>
+          <p>Click a client to open their profile. Add more clients in clients.json.</p>
+        </div>
+        <div id="clientList" class="client-grid" aria-live="polite"></div>
+        <p class="client-note">
+          JSON format: { "clients": [{ "name": "Person", "link": "https://..." }] }
+        </p>
+      </section>
+
+      <section id="skills" class="panel">
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li>Video Editing</li>
+          <li>Color Grading</li>
+          <li>Sound Design</li>
+          <li>Motion and Transitions</li>
+          <li>Story-Driven Pacing</li>
+          <li>Multi-Format Delivery</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="panel contact">
+        <h2>Contact</h2>
+        <p>Interested in collaborating on your next video project?</p>
+        <a class="btn btn-primary" href="mailto:brotnoob1234@gmail.com">brotnoob1234@gmail.com</a>
+        <div class="social-row">
+          <a class="btn btn-ghost" href="https://www.tiktok.com/@eindreistiger" target="_blank" rel="noreferrer">TikTok @eindreistiger</a>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@eindreistiger" target="_blank" rel="noreferrer">YouTube @eindreistiger</a>
+          <span class="discord-tag">Discord: eindreistiger</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><span id="year"></span> Eindreistiger Portfolio. Built for every screen size.</p>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
