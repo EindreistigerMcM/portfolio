@@ -19,6 +19,11 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Navigation */
@@ -30,6 +35,7 @@ body {
     top: 0;
     z-index: 100;
     border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+    width: 100%;
 }
 
 .nav-container {
@@ -39,6 +45,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -48,6 +55,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    white-space: nowrap;
 }
 
 .nav-menu {
@@ -75,20 +83,30 @@ body {
     justify-content: center;
     text-align: center;
     padding: 2rem;
+    width: 100%;
 }
 
 .hero-content {
     animation: fadeInUp 1s ease-out;
+    max-width: 100%;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #9d4edd, #c77dff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
+    text-shadow: 
+        0 0 20px #00ff00,
+        0 0 40px #00ff00,
+        0 0 60px #00ff00,
+        0 0 80px #00ff00,
+        0 0 100px #ff00ff,
+        0 0 120px #ff00ff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-style: italic;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.8));
 }
 
 .hero-subtitle {
@@ -123,6 +141,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
 }
 
 /* Section Title */
@@ -141,6 +160,7 @@ body {
 .about {
     padding: 5rem 2rem;
     background: rgba(16, 0, 43, 0.3);
+    width: 100%;
 }
 
 .about-text {
@@ -155,12 +175,15 @@ body {
 /* Projects Section */
 .projects {
     padding: 5rem 2rem;
+    width: 100%;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -216,6 +239,7 @@ body {
     padding: 5rem 2rem;
     background: rgba(16, 0, 43, 0.3);
     text-align: center;
+    width: 100%;
 }
 
 .contact-text {
@@ -231,6 +255,7 @@ body {
     text-align: center;
     border-top: 1px solid rgba(157, 78, 221, 0.2);
     color: #a0a0a0;
+    width: 100%;
 }
 
 /* Animations */
@@ -245,23 +270,197 @@ body {
     }
 }
 
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 101;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #c77dff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(16, 0, 43, 0.98);
+        padding: 2rem;
         gap: 1rem;
-        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+        max-width: 100vw;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .logo {
+        font-size: 1.5rem;
     }
 
     .hero {
         min-height: 70vh;
+        padding: 1rem;
+    }
+
+    .hero-title {
+        letter-spacing: 2px;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0;
     }
 
     .cta-button {
         padding: 0.8rem 2rem;
         font-size: 1rem;
+    }
+
+    .about {
+        padding: 3rem 1rem;
+    }
+
+    .projects {
+        padding: 3rem 1rem;
+    }
+
+    .contact {
+        padding: 3rem 1rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        text-shadow: 
+            0 0 15px #00ff00,
+            0 0 30px #00ff00,
+            0 0 45px #00ff00,
+            0 0 60px #ff00ff;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-menu {
+        top: 50px;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 1rem;
+    }
+
+    .about {
+        padding: 2rem 1rem;
+    }
+
+    .projects {
+        padding: 2rem 1rem;
+    }
+
+    .contact {
+        padding: 2rem 1rem;
     }
 }
