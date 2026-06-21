@@ -1,19 +1,19 @@
 {
   "links": [
     {
-      "name": "Promo Pack",
-      "link": "https://example.com/promo",
-      "note": "Current promo links"
+      "name": "Nexo Maker",
+      "link": "https://www.nexomaker.com/ref/U9CF918CFC6",
+      "note": "If you buy something using this link, it will help me alot!"
     },
     {
-      "name": "Collab Form",
+      "name": "Server Donations",
       "link": "https://example.com/collab",
-      "note": "Brand and creator collabs"
+      "note": "Donate to my Server to help me keep it running with my friends!"
     },
     {
-      "name": "All Socials",
-      "link": "https://example.com/socials",
-      "note": "Everything in one spot"
+      "name": "G2A Promo",
+      "link": "https://www.g2a.com/n/eindreistiger",
+      "note": "Buy something from g2a to support me!"
     }
   ]
 }
