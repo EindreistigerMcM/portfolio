@@ -3,6 +3,7 @@ const siteNav = document.querySelector('.site-nav');
 const navLinks = document.querySelectorAll('.site-nav a');
 const yearNode = document.querySelector('#year');
 const clientList = document.querySelector('#clientList');
+const extraLinksList = document.querySelector('#extraLinksList');
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
@@ -95,6 +96,46 @@ const createClientCard = (client) => {
   return card;
 };
 
+const createExtraLinkCard = (item) => {
+  const card = document.createElement('a');
+  card.className = 'client-card';
+  card.href = item.link;
+  card.target = '_blank';
+  card.rel = 'noreferrer';
+
+  const avatar = document.createElement('img');
+  avatar.className = 'client-avatar';
+  avatar.loading = 'lazy';
+  avatar.alt = `${item.name} link icon`;
+
+  const primaryAvatar = getAvatarFromSocialLink(item.link);
+  const fallbackAvatar = getHostFallbackAvatar(item.link);
+  avatar.src = primaryAvatar;
+  avatar.onerror = () => {
+    if (avatar.src !== fallbackAvatar) {
+      avatar.src = fallbackAvatar;
+    }
+  };
+
+  const body = document.createElement('div');
+  body.className = 'client-body';
+
+  const title = document.createElement('h3');
+  title.textContent = item.name;
+
+  const note = document.createElement('p');
+  note.className = 'extra-link-note';
+  note.textContent = item.note || 'Open link';
+
+  const linkLabel = document.createElement('p');
+  linkLabel.className = 'client-link-text';
+  linkLabel.textContent = item.link;
+
+  body.append(title, note, linkLabel);
+  card.append(avatar, body);
+  return card;
+};
+
 const renderClients = async () => {
   if (!clientList) {
     return;
@@ -126,4 +167,36 @@ const renderClients = async () => {
   }
 };
 
+const renderExtraLinks = async () => {
+  if (!extraLinksList) {
+    return;
+  }
+
+  try {
+    const response = await fetch('links.json', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error('Failed to load links.json');
+    }
+
+    const data = await response.json();
+    const links = Array.isArray(data.links) ? data.links : [];
+
+    extraLinksList.innerHTML = '';
+
+    links.forEach((item) => {
+      if (!item || !item.name || !item.link) {
+        return;
+      }
+      extraLinksList.append(createExtraLinkCard(item));
+    });
+
+    if (extraLinksList.children.length === 0) {
+      extraLinksList.innerHTML = '<p class="client-empty">No links added yet.</p>';
+    }
+  } catch {
+    extraLinksList.innerHTML = '<p class="client-empty">Could not load links list.</p>';
+  }
+};
+
 renderClients();
+renderExtraLinks();

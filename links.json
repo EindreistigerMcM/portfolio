@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "name": "Promo Pack",
+      "link": "https://example.com/promo",
+      "note": "Current promo links"
+    },
+    {
+      "name": "Collab Form",
+      "link": "https://example.com/collab",
+      "note": "Brand and creator collabs"
+    },
+    {
+      "name": "All Socials",
+      "link": "https://example.com/socials",
+      "note": "Everything in one spot"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Extra links for promo links, collabs, and other channels."
+    />
+    <title>Eindreistiger Links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html#home">Eindreistiger</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#clients">Clients</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero panel">
+        <p class="eyebrow">Links</p>
+        <h1>All my extra links in one place.</h1>
+        <p class="lead">Click on any link to explore more.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="index.html">Back to Portfolio</a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <h2>Extra Links</h2>
+          <p>Click on any of them to visit!</p>
+        </div>
+        <div id="extraLinksList" class="extra-links-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> all rights reserved. Eindreistiger</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
